@@ -1,0 +1,47 @@
+<!-- Baytock chat assistant
+     Paste everything below ONCE, just before </body>, so it shows on every page.
+     Contains no API keys or passwords - only the public chat address. -->
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
+<style>
+  /* Chat colours (current @n8n/chat variable names). html:root wins over the widget's own defaults. */
+  html:root {
+    --chat--color--primary: #1A9A6C;
+    --chat--color--primary-shade-50: #168A60;
+    --chat--color--primary--shade-100: #127A54;
+    --chat--color--secondary: #1A9A6C;
+    --chat--color-secondary-shade-50: #168A60;
+    --chat--toggle--background: #1A9A6C;
+    --chat--toggle--hover--background: #168A60;
+    --chat--toggle--active--background: #127A54;
+    --chat--header--background: #1A9A6C;
+    --chat--header--color: #FFFFFF;
+    --chat--heading--font-size: 1.3em;
+    --chat--subtitle--line-height: 1.5;
+    --chat--message--user--background: #1A9A6C;
+    --chat--message--user--color: #FFFFFF;
+    --chat--button--background--primary: #1A9A6C;
+    --chat--button--background--primary--hover: #168A60;
+    --chat--input--send--button--color: #1A9A6C;
+    --chat--input--send--button--color-hover: #168A60;
+  }
+</style>
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+  createChat({
+    webhookUrl: 'https://l3-labs.taila999a0.ts.net:8443/webhook/79872aa1-4995-4f03-8515-502d42df122a/chat',
+    mode: 'window',
+    showWelcomeScreen: false,
+    loadPreviousSession: false,
+    defaultLanguage: 'en',
+    initialMessages: ['Welcome to Baytock', 'How can I help you today?'],
+    i18n: {
+      en: {
+        title: 'Baytock Assistant',
+        subtitle: 'Ask us about projects and training programs.',
+        footer: 'Chats are shared with the Baytock team to help with your enquiry.',
+        getStarted: 'New Conversation',
+        inputPlaceholder: 'Type your question...',
+      },
+    },
+  });
+</script>
