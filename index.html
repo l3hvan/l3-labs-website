@@ -28,16 +28,30 @@
     --wrap: 1180px;
     --gap: clamp(80px, 10vw, 136px);
 
-    --chat--color-primary: #3D6BF0;
-    --chat--color-primary-shade-50: #335FE0;
-    --chat--color-primary-shade-100: #2A52CC;
-    --chat--color-secondary: #2F5BE0;
+  }
+  /* Chat widget colours (current @n8n/chat variable names). html:root wins over the widget's own :root defaults. */
+  html:root {
+    --chat--font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+    --chat--color--primary: #3D6BF0;
+    --chat--color--primary-shade-50: #335FE0;
+    --chat--color--primary--shade-100: #2A52CC;
+    --chat--color--secondary: #2F5BE0;
     --chat--color-secondary-shade-50: #284FCB;
+    --chat--toggle--background: #3D6BF0;
+    --chat--toggle--hover--background: #335FE0;
+    --chat--toggle--active--background: #2A52CC;
     --chat--header--background: #131C2E;
     --chat--header--color: #F1F5F9;
     --chat--heading--font-size: 1.25em;
     --chat--subtitle--line-height: 1.5;
-    --chat--border-radius: 12px;
+    --chat--window--border-radius: 14px;
+    --chat--message--border-radius: 12px;
+    --chat--message--user--background: #2F5BE0;
+    --chat--message--user--color: #FFFFFF;
+    --chat--button--background--primary: #2F5BE0;
+    --chat--button--background--primary--hover: #284FCB;
+    --chat--input--send--button--color: #2F5BE0;
+    --chat--input--send--button--color-hover: #284FCB;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -364,7 +378,7 @@
 
 <script type="module">
   // Paste the L3 Labs chat URL here (with :8443). Leave empty to hide the chat button.
-  const CHAT_WEBHOOK_URL = '';
+  const CHAT_WEBHOOK_URL = 'https://l3-labs.taila999a0.ts.net/webhook/58904ff2-c777-4755-a246-5c22b15bb598/chat';
 
   if (CHAT_WEBHOOK_URL) {
     const { createChat } = await import('https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js');
